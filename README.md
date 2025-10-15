@@ -32,6 +32,15 @@ docker exec devprivops devprivops test user pass 127.0.0.1 3030 tmp --local-dir 
 
 This will give access to the configuration directories in the host to the container.
 
+**Note**:
+This tool requires a base image that we call "Golang Fuseki".
+In the case that this tool is being executed outside of the environment recommended in the [docs](https://github.com/ATNoG/rigourous-devprivops-docs), this image may be built with:
+```sh
+docker build -t golang-fuseki -f Dockerfile.golang_fuseki .
+```
+
+The tool's Dockerfile might have to be changed to point to the new image.
+
 ## Native Binary
 
 The tool can be installed nativelly by compiling the source code.

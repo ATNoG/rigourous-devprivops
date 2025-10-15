@@ -1,0 +1,21 @@
+# Use official Golang image
+FROM golang:latest
+
+# Install necessary dependencies
+RUN apt update -y && apt install -y \
+    wget \
+    unzip \
+	default-jdk
+
+# Download and install Apache Jena Fuseki
+WORKDIR /opt
+RUN wget https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-5.5.0.tar.gz && \
+    tar xzf apache-jena-fuseki-5.5.0.tar.gz && \
+    rm apache-jena-fuseki-5.5.0.tar.gz && \
+    mv apache-jena-fuseki-5.5.0 fuseki
+
+# Expose the Fuseki port
+EXPOSE 3030
+
+# Start Fuseki server
+CMD ["/opt/fuseki/fuseki-server", "--mem", "--port=3030", "/tmp"]

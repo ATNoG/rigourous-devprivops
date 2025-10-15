@@ -1,5 +1,6 @@
 # Use image with golang and docker
 FROM 192.168.56.1:5000/golang-fuseki:latest
+# FROM golang-fuseki
 
 COPY . /src/
 WORKDIR /src/ 

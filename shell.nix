@@ -13,4 +13,3 @@ pkgs.mkShell {
 		go-tools
 	];
 }
-
