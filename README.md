@@ -27,7 +27,7 @@ where `host directory` is where the tool files are located. By convention, it sh
 And then when running commands from the host, simply run
 
 ```sh
-docker exec devprivops devprivops test user pass 127.0.0.1 3030 tmp --local-dir <container direcotry>
+docker exec devprivops devprivops test user pass 127.0.0.1 3030 tmp --local-dir <container directory>
 ```
 
 This will give access to the configuration directories in the host to the container.
