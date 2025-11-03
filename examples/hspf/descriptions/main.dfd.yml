@@ -150,9 +150,9 @@ data stores:
       - type: :AnonNetworkPacket
         storage period: 30d
         create: :StoreTraffic
-        read: 
-        update: 
-        delete: 
+        read:   :RAnonNetworkPacket
+        update: :UAnonNetworkPacket
+        delete: :DAnonNetworkPacket
     location:
       - Portugal
     environment: []
@@ -163,9 +163,9 @@ data stores:
       - type: :AnonNetworkPacket
         storage period: 30d
         create: :StoreTrafficLocal
-        read: 
-        update: 
-        delete: 
+        read:   :CAnonNetworkPacket
+        update: :UAnonNetworkPacket
+        delete: :DAnonNetworkPacket
     location:
       - Portugal
     environment: []
@@ -176,7 +176,7 @@ data stores:
       - type: :Model
         storage period: eternal
         create: :CModel
-        read: :RModel
+        read:   :RModel
         update: :UModel
         delete: :DModel
     location:

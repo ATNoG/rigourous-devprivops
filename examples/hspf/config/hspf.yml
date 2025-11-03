@@ -1,0 +1,9 @@
+config:
+  - id: dfd:RAnonNetworkPacket
+    value: dfd:RAnonNetworkPacket
+  - id: dfd:UAnonNetworkPacket
+    value: dfd:UAnonNetworkPacket
+  - id: dfd:DAnonNetworkPacket
+    value: dfd:DAnonNetworkPacket
+  - id: dfd:CAnonNetworkPacket
+    value: dfd:CAnonNetworkPacket

@@ -8,7 +8,8 @@ data types:
   - id: Presence
     aggregates: []
     validity: eternal
-    categories: :presence categories
+    categories:
+      - :presence categories
   - id: Document
     aggregates: []
     validity: eternal
@@ -39,7 +40,8 @@ external entities:
     safeguards: []
     options: []
   - id: Home Owner
-    consumes: :home owner consumption
+    consumes:
+      - :home owner consumption
     produces:
       - :RGBColor
       - :Document
@@ -135,7 +137,7 @@ data stores:
       - type: :Document
         storage period: eternal 
         create: :C Document NAS
-        read: :R Document NAS
+        read:   :R Document NAS
         update: :U Document NAS
         delete: :D Document NAS
     location:
