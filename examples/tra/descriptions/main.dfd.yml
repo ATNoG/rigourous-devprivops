@@ -1,0 +1,114 @@
+# yaml-language-server: $schema=../../global/schemas/dfd-schema.json
+
+data types:
+  - id: Anomaly
+    aggregates:
+      - :Source
+      - :Type
+      - :AffectedSystem
+    validity: 30d
+    categories:
+      - dpia:personal
+      - dpia:confidential
+  - id: RiskScore
+    aggregates:
+      - :CPEInfo
+      - :Score
+      - :Timestamp
+    validity: 30d
+    categories:
+      - dpia:personal
+      - dpia:confidential
+  - id: CVEData
+    aggregates:
+     - :CVEID
+     - :Description
+     - :CVSSScore
+    validity: 24h
+    categories:
+      - dpia:public
+external entities:
+  - id: R12-AID-TRA # the anomaly source
+    consumes: []
+    produces:
+      - :Anomaly
+    location:
+      - Portugal
+    environment: []
+    categories: []
+    age: null
+    produces public information: false
+    safeguards: []
+    options: []
+  - id: TRA-AID # risk consumer
+    consumes:
+      - :RiskScore
+    produces: []
+    location:
+      - Portugal
+    environment: []
+    categories: []
+    age: null
+    produces public information: false
+    safeguards: []
+    options: []
+  - id: NIST NVD
+    consumes: []
+    produces:
+      - :CVEData
+    location:
+      - USA # NVD is operated by NIST in the US
+    environment: []
+    categories:
+      - dpia:public
+    age: null
+    produces public information: true
+    safeguards: []
+    options: []
+processes:
+  - id: AssessThreatRisk
+    consumes:
+      - :Anomaly
+      - :CVEData
+    produces:
+      - :RiskScore
+    location:
+      - Portugal
+    environment: []
+    purposes:
+      - :threat assessment
+      - :risk calculation
+    certification: []
+    safeguards: []
+data stores: [] # what does the TRA store locally?sss
+data flows:
+  - id: consume anomalies
+    from: :R12-AID-TRA
+    to: :AssessThreatRisk
+    data:
+      - :Anomaly
+    encryption: HTTPS
+    periodicity: 1s
+    amount of data per period: 1 # more than 1 anomaly each time??
+    certification: []
+    safeguards: []
+  - id: publish risk scores
+    from: :AssessThreatRisk
+    to: :TRA-AID
+    data:
+      - :RiskScore
+    encryption: HTTPS
+    periodicity: 1s
+    amount of data per period: 1
+    certification: []
+    safeguards: []
+  - id: FetchCVE
+    from: :NIST NVD
+    to: :AssessThreatRisk
+    data:
+      - :CVEData
+    encryption: HTTPS
+    periodicity: 1h
+    amount of data per period: 1000 # how many CVEs per request??
+    certification: []
+    safeguards: []

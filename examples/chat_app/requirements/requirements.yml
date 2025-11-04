@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=../../../schema/schemas/requirement-schema.json
+
 - use case: As a persona I want to do stuff so that my life is better
   is misuse case: false
   clearence level: 0
