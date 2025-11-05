@@ -1,0 +1,12 @@
+PREFIX dfd: <https://devprivops.com/dfd/>
+PREFIX dpia: <https://devprivops.com/dpia/>
+
+# this finds any 'entity' that consumes data produced by
+# the NIST NVD and tags it as a 'cve_enrichment_process'
+
+INSERT {
+    dpia:ROOT dpia:cve_enrichment_process ?process .
+} WHERE {
+    dfd:NIST_NVD dfd:produces ?cve_data_type .
+    ?process dfd:consumes ?cve_data_type .
+}

@@ -1,0 +1,8 @@
+PREFIX dfd: <https://devprivops.com/dfd/>
+PREFIX dpia: <https://devprivops.com/dpia/>
+
+SELECT ?success WHERE {  
+    dfd:ZeroTrustManager dfd:produces ?trust_data .
+    dfd:AssessThreatRisk dfd:consumes ?trust_data .
+    BIND("FOUND" as ?success)
+}

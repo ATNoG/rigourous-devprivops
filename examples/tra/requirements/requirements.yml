@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=../../../schema/schemas/requirement-schema.json
+
+- use case: As a Security Analyst, I want the system to assess risk based on known vulnerabilities so that I can get accurate threat levels.
+  is misuse case: false
+  clearence level: 0
+  groups: ["all"]
+  requirements:
+    - title: The TRA must use the NIST NVD
+      description: The threat risk assessment process must consume data from the NIST NVD to ensure risk scores are enriched with up-to-date CVE data.
+      query: requirements/tra_uses_nvd.rq
+      clearence level: 0
+      groups: ["all"]
+
+# - use case: As the TRA, I want to consider the trust posture of an asset when calculating risk, so that the risk score is accurate and context-aware.
+#   is misuse case: false
+#   clearence level: 0
+#   groups: ["all"]
+#   requirements:
+#     - title: The TRA must consume trust data from the ZTM
+#       description: The TRA's risk assessment must be enriched with trust data (Trust Posture) from the Zero Trust Manager (ZTM) as specified in D2.1.
+#       query: requirements/tra_consumes_ztm_data.rq
+#       clearence level: 0
+#       groups: ["all"]

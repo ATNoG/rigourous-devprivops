@@ -1,0 +1,8 @@
+PREFIX dpia: <https://devprivops.com/dpia/>
+PREFIX dfd: <https://devprivops.com/dfd/>
+
+SELECT ?success
+WHERE {
+    dpia:ROOT dpia:cve_enrichment_process dfd:AssessThreatRisk .
+    BIND("FOUND" as ?success)
+}

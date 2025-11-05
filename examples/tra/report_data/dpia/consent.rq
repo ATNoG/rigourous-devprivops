@@ -1,0 +1,49 @@
+PREFIX dfd: <https://devprivops.com/dfd/>
+PREFIX dpia: <https://devprivops.com/dpia/>
+
+# Sect 2 Art 13
+# X id and contact of controller/its rep
+# X DPO contact
+# o purposes and legal basis for processing
+# o legitimate interest and of whom (when based on Art 6 1f)
+# o (categories of) recipients
+# + destinations (3rd parties), whether there is adequacy decision by the Commission, safeguards on the transfer
+# o storage period/criteria
+# X right to rectify, erase and port data
+# X right to withdraw consent
+# X right to complain with a supervising authority
+# !! whether the data is a legal requirement or necessary to enter a contract
+# o existence of automated decision making (explain the logic of the decision making and value/consequences for the data subject)
+
+SELECT *
+WHERE {
+    dfd:ROOT dfd:external_entities ?from .
+    ?from dfd:categories dpia:human .
+    ?from (^dfd:from/dfd:to)+ ?to .
+    OPTIONAL { ?to dfd:location ?location . }
+
+    {
+        # data store
+        ?to dfd:data_stored/dfd:type ?dt .
+        ?to dfd:data_stored/dfd:storage_period ?storage_period .
+    } UNION {
+        # process
+        ?to dfd:consumes ?dt .
+        dpia:ROOT dpia:processings ?toDPIA .
+
+        ?toDPIA dpia:purposes ?purposes .
+        ?toDPIA dpia:legitimate_interest ?legitimate_interest_of .
+        ?toDPIA dpia:automated_decisions ?automated_decision_making .
+    } UNION {
+        # external entity
+        ?to dfd:categories ?category .
+    } 
+#    UNION {
+#        # data flow
+#        dfd:ROOT dfd:data_flows ?to .
+#    } 
+    UNION {
+        # common optional params
+        ?to dfd:safeguards ?safeguards .
+    }
+}

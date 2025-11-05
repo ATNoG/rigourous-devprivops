@@ -10,6 +10,7 @@
       query: requirements/auth_user_get_doc.rq
       clearence level: 0
       groups: ["all"]
+
 - use case: As an UnauthenticatedUser I want to view Documents so that I can recieve Documents without the hassle of having an account  
   is misuse case: false
   clearence level: 0
@@ -22,14 +23,13 @@
       groups: ["all"]
 
 # Misuse cases
-
-#- use case: As an AuthenticatedUser I want to spam the system with files so that it runs out of storage faster
-#  is misuse case: true
-#  clearence level: 0
-#  groups: ["all"]
-#  requirements:
-#    - title: AuthenticatedUsers must be able to post files at a rate higher than the one supported by the system
-#      description: An AuthenticatedUser, with intent to deny service to everyone else by filling storage needlessly, must be able to send files at a high rate
-#      query: requirements/auth_user_spam.rq
-#      clearence level: 0
-#      groups: ["all"]
+# - use case: As an AuthenticatedUser I want to spam the system with files so that it runs out of storage faster
+#   is misuse case: true
+#   clearence level: 0
+#   groups: ["all"]
+#   requirements:
+#     - title: AuthenticatedUsers must be able to post files at a rate higher than the one supported by the system
+#       description: An AuthenticatedUser, with intent to deny service to everyone else by filling storage needlessly, must be able to send files at a high rate
+#       query: requirements/auth_user_spam.rq
+#       clearence level: 0
+#       groups: ["all"]

@@ -27,6 +27,15 @@ data types:
     validity: 24h
     categories:
       - dpia:public
+  - id: TrustPosture
+    aggregates:
+      - :AssetID
+      - :TrustScore
+      - :Status
+    validity: 5m
+    categories:
+      - dpia:confidential
+
 external entities:
   - id: R12-AID-TRA # the anomaly source
     consumes: []
@@ -57,7 +66,7 @@ external entities:
     produces:
       - :CVEData
     location:
-      - USA # NVD is operated by NIST in the US
+      - USA
     environment: []
     categories:
       - dpia:public
@@ -65,11 +74,25 @@ external entities:
     produces public information: true
     safeguards: []
     options: []
+  - id: ZeroTrustManager # the ZTM (Zero Trust manager)
+    consumes: []
+    produces:
+      - :TrustPosture
+    location:
+      - Portugal
+    environment: []
+    categories: []
+    age: null
+    produces public information: false
+    safeguards: []
+    options: []
+
 processes:
   - id: AssessThreatRisk
     consumes:
       - :Anomaly
       - :CVEData
+      - :TrustPosture
     produces:
       - :RiskScore
     location:
@@ -78,9 +101,13 @@ processes:
     purposes:
       - :threat assessment
       - :risk calculation
+      - :trust-aware scoring
     certification: []
     safeguards: []
-data stores: [] # what does the TRA store locally?sss
+
+ # what does the TRA store locally?
+data stores: []
+
 data flows:
   - id: consume anomalies
     from: :R12-AID-TRA
@@ -89,7 +116,7 @@ data flows:
       - :Anomaly
     encryption: HTTPS
     periodicity: 1s
-    amount of data per period: 1 # more than 1 anomaly each time??
+    amount of data per period: 1
     certification: []
     safeguards: []
   - id: publish risk scores
@@ -109,6 +136,16 @@ data flows:
       - :CVEData
     encryption: HTTPS
     periodicity: 1h
-    amount of data per period: 1000 # how many CVEs per request??
+    amount of data per period: 1000
+    certification: []
+    safeguards: []
+  - id: FetchTrustPosture
+    from: :ZeroTrustManager
+    to: :AssessThreatRisk
+    data:
+      - :TrustPosture
+    encryption: HTTPS
+    periodicity: 1s
+    amount of data per period: 1
     certification: []
     safeguards: []
