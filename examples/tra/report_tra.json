@@ -2,50 +2,11 @@
     "attack trees": [
         {
             "root": {
-                "description": "R",
-                "query": "attack_trees/queries/master.rq",
-                "children": [
-                    {
-                        "description": "C1",
-                        "query": "attack_trees/queries/file1.rq",
-                        "children": [
-                            {
-                                "description": "C11",
-                                "query": "attack_trees/queries/file3.rq",
-                                "children": [],
-                                "execution status": 2,
-                                "execution result": [
-                                    {
-                                        "o": "02/03/2004"
-                                    }
-                                ],
-                                "clearence level": 0,
-                                "groups": [
-                                    "all"
-                                ]
-                            }
-                        ],
-                        "execution status": 1,
-                        "execution result": [],
-                        "clearence level": 0,
-                        "groups": [
-                            "all"
-                        ]
-                    },
-                    {
-                        "description": "C2",
-                        "query": "attack_trees/queries/file2.rq",
-                        "children": [],
-                        "execution status": 1,
-                        "execution result": [],
-                        "clearence level": 0,
-                        "groups": [
-                            "all"
-                        ]
-                    }
-                ],
-                "execution status": 0,
-                "execution result": null,
+                "description": "Sensitive TRA data (Anomaly or RiskScore) is leaked over an unencrypted channel",
+                "query": "attack_trees/queries/data_leak.rq",
+                "children": [],
+                "execution status": 1,
+                "execution result": [],
                 "clearence level": 0,
                 "groups": [
                     "all"
@@ -54,7 +15,7 @@
         }
     ],
     "branch": "",
-    "config": "chat_app",
+    "config": "tra",
     "extra data": [
         {
             "clearence level": 0,
@@ -65,98 +26,7 @@
             ],
             "heading": "List of information to be provided for each personal data point collected",
             "location": "regulations.dpia",
-            "results": [
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dfd/send_message",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "storage_period": "eternal",
-                    "to": "https://devprivops.com/dfd/message_db"
-                },
-                {
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "storage_period": "eternal",
-                    "to": "https://devprivops.com/dfd/message_db"
-                },
-                {
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "storage_period": "eternal",
-                    "to": "https://devprivops.com/dfd/message_db"
-                },
-                {
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "storage_period": "eternal",
-                    "to": "https://devprivops.com/dfd/message_db"
-                },
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dpia/User",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "category": "https://devprivops.com/dpia/human",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "to": "https://devprivops.com/dpia/User"
-                },
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/username",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dpia/AccountSystem",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/password",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dpia/AccountSystem",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/AccountId",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dpia/AccountSystem",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "safeguards": "encryption",
-                    "to": "https://devprivops.com/dpia/AccountSystem"
-                }
-            ]
+            "results": []
         }
     ],
     "policies": [
@@ -231,7 +101,24 @@
                     "mapping message": "Ensure all destinataries for the 'data' are valid external entities or their categories",
                     "maximum violations": 0,
                     "name": "Personal data requires valid destinataries",
-                    "violations": []
+                    "violations": [
+                        {
+                            "data": "https://devprivops.com/dfd/CVEData",
+                            "dest": "https://devprivops.com/dpia/SystemAdministrator"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/Anomaly",
+                            "dest": "https://devprivops.com/dpia/SystemAdministrator"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/RiskScore",
+                            "dest": "https://devprivops.com/dpia/SystemAdministrator"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/TrustPosture",
+                            "dest": "https://devprivops.com/dpia/SystemAdministrator"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -243,7 +130,20 @@
                     "mapping message": "Ensure all entities under 'destinataries' is an external entity of a category of external entities in the dfd",
                     "maximum violations": 0,
                     "name": "All external entities must be defined",
-                    "violations": []
+                    "violations": [
+                        {
+                            "ext_ent": "https://devprivops.com/dpia/SystemAdministrator"
+                        },
+                        {
+                            "ext_ent": "https://devprivops.com/dpia/SystemAdministrator"
+                        },
+                        {
+                            "ext_ent": "https://devprivops.com/dpia/SystemAdministrator"
+                        },
+                        {
+                            "ext_ent": "https://devprivops.com/dpia/SystemAdministrator"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -267,7 +167,17 @@
                     "mapping message": "Ensure all processes' purposes and those under 'personal data processing whitelist' and 'personal data processing that requires DPIA' are defined under the 'purposes' property of a processing",
                     "maximum violations": 0,
                     "name": "All purposes of processing must be defined",
-                    "violations": []
+                    "violations": [
+                        {
+                            "purpose": "https://devprivops.com/dfd/threat_assessment"
+                        },
+                        {
+                            "purpose": "https://devprivops.com/dfd/trust-aware_scoring"
+                        },
+                        {
+                            "purpose": "https://devprivops.com/dfd/risk_calculation"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -339,7 +249,17 @@
                     "mapping message": "Ensure all purposes in the dfd processes are also declared in the dpia's purpose declaration",
                     "maximum violations": 0,
                     "name": "Data can only be used for the declared purposes",
-                    "violations": []
+                    "violations": [
+                        {
+                            "purpose": "https://devprivops.com/dfd/threat_assessment"
+                        },
+                        {
+                            "purpose": "https://devprivops.com/dfd/trust-aware_scoring"
+                        },
+                        {
+                            "purpose": "https://devprivops.com/dfd/risk_calculation"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -351,7 +271,38 @@
                     "mapping message": "No process can to automated decisions, score users or have a legal impact on them, do large scale processing, do systematic monitoring, be blacklisted in the DPIA, or not be whitelisted",
                     "maximum violations": 0,
                     "name": "DPIA",
-                    "violations": []
+                    "violations": [
+                        {
+                            "proc": "https://devprivops.com/dfd/AssessThreatRisk",
+                            "risk": "https://devprivops.com/dpia/Unauthorized_access_to_TRA_data",
+                            "violation": "35 3 a"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/AssessThreatRisk",
+                            "risk": "https://devprivops.com/dpia/Incorrect_risk_assessment",
+                            "violation": "35 3 a"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/AssessThreatRisk",
+                            "risk": "https://devprivops.com/dpia/Unauthorized_access_to_TRA_data",
+                            "violation": "35 3 b"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/AssessThreatRisk",
+                            "risk": "https://devprivops.com/dpia/Incorrect_risk_assessment",
+                            "violation": "35 3 b"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/AssessThreatRisk",
+                            "risk": "https://devprivops.com/dpia/Unauthorized_access_to_TRA_data",
+                            "violation": "35 3 c"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/AssessThreatRisk",
+                            "risk": "https://devprivops.com/dpia/Incorrect_risk_assessment",
+                            "violation": "35 3 c"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -363,7 +314,11 @@
                     "mapping message": "No processing shall require new technologies",
                     "maximum violations": 0,
                     "name": "New Technologies Require DPIA",
-                    "violations": []
+                    "violations": [
+                        {
+                            "proc": "https://devprivops.com/dfd/AssessThreatRisk"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -406,28 +361,40 @@
                     "name": "No undefined data types",
                     "violations": [
                         {
-                            "dataType": "https://devprivops.com/dfd/username"
+                            "dataType": "https://devprivops.com/dfd/CVEID"
                         },
                         {
-                            "dataType": "https://devprivops.com/dfd/password"
+                            "dataType": "https://devprivops.com/dfd/Timestamp"
                         },
                         {
-                            "dataType": "https://devprivops.com/dfd/username"
+                            "dataType": "https://devprivops.com/dfd/AffectedSystem"
                         },
                         {
-                            "dataType": "https://devprivops.com/dfd/username"
+                            "dataType": "https://devprivops.com/dfd/CVSSScore"
                         },
                         {
-                            "dataType": "https://devprivops.com/dfd/password"
+                            "dataType": "https://devprivops.com/dfd/Source"
                         },
                         {
-                            "dataType": "https://devprivops.com/dfd/password"
+                            "dataType": "https://devprivops.com/dfd/Status"
                         },
                         {
-                            "dataType": "https://devprivops.com/dfd/text"
+                            "dataType": "https://devprivops.com/dfd/CPEInfo"
                         },
                         {
-                            "dataType": "https://devprivops.com/dfd/datetime"
+                            "dataType": "https://devprivops.com/dfd/AssetID"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/Score"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/Type"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/Description"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/TrustScore"
                         }
                     ]
                 },
@@ -441,7 +408,11 @@
                     "mapping message": "Ensure all entities are declared in the 'external entities' property or the 'categories' property of one",
                     "maximum violations": 0,
                     "name": "All external entities must be described",
-                    "violations": []
+                    "violations": [
+                        {
+                            "entity": "https://devprivops.com/dpia/SystemAdministrator"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -489,7 +460,12 @@
                     "mapping message": "Ensure the 'localtion' values are EU countries",
                     "maximum violations": 0,
                     "name": "User data shall not leave the EU",
-                    "violations": []
+                    "violations": [
+                        {
+                            "destId": "https://devprivops.com/dfd/NIST_NVD",
+                            "location": "USA"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -507,7 +483,7 @@
         }
     ],
     "project": "src",
-    "time": 1762358309,
+    "time": 1762361814,
     "user stories": [
         {
             "clearence level": 0,
@@ -517,16 +493,16 @@
             "is misuse case": false,
             "requirements": [
                 {
-                    "description": "Some more details on the requirement",
+                    "description": "The threat risk assessment process must consume data from the NIST NVD to ensure risk scores are enriched with up-to-date CVE data.",
                     "results": [
                         {
-                            "o": "02/03/2004"
+                            "success": "FOUND"
                         }
                     ],
-                    "title": "Requirement 1"
+                    "title": "The TRA must use the NIST NVD"
                 }
             ],
-            "use case": "As a persona I want to do stuff so that my life is better"
+            "use case": "As a Security Analyst, I want the system to assess risk based on known vulnerabilities so that I can get accurate threat levels."
         }
     ]
 }

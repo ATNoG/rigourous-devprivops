@@ -1,0 +1,15 @@
+PREFIX dfd: <https://devprivops.com/dfd/>
+PREFIX dpia: <https://devprivops.com/dpia/>
+
+SELECT ?flow ?sensitive_data
+WHERE {
+    ?flow a dfd:DataFlow .  
+    ?flow dfd:data ?sensitive_data .
+
+    VALUES ?sensitive_data {
+        dfd:Anomaly
+        dfd:RiskScore
+    }
+
+    ?flow dfd:encryption "none" .
+}

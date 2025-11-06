@@ -53,7 +53,7 @@
             }
         }
     ],
-    "branch": "master",
+    "branch": "",
     "config": "pol_violation",
     "extra data": [
         {
@@ -75,6 +75,27 @@
                     "purposes": "https://devprivops.com/dpia/message_routing",
                     "to": "https://devprivops.com/dfd/send_message",
                     "toDPIA": "https://devprivops.com/dfd/send_message"
+                },
+                {
+                    "dt": "https://devprivops.com/dfd/message",
+                    "from": "https://devprivops.com/dpia/User",
+                    "location": "Portugal",
+                    "storage_period": "eternal",
+                    "to": "https://devprivops.com/dfd/message_db"
+                },
+                {
+                    "dt": "https://devprivops.com/dfd/message",
+                    "from": "https://devprivops.com/dpia/User",
+                    "location": "Portugal",
+                    "storage_period": "eternal",
+                    "to": "https://devprivops.com/dfd/message_db"
+                },
+                {
+                    "dt": "https://devprivops.com/dfd/message",
+                    "from": "https://devprivops.com/dpia/User",
+                    "location": "Portugal",
+                    "storage_period": "eternal",
+                    "to": "https://devprivops.com/dfd/message_db"
                 },
                 {
                     "dt": "https://devprivops.com/dfd/message",
@@ -198,72 +219,8 @@
             ]
         },
         {
-            "name": "gdpr",
+            "name": "dpia",
             "results": [
-                {
-                    "clearence level": 0,
-                    "description": "Ensure all data types that flow in the system are declared",
-                    "groups": [
-                        "all"
-                    ],
-                    "is consistency": true,
-                    "mapping message": "For each dataType, ensure a declaration for it exists in the 'data types' property",
-                    "maximum violations": 0,
-                    "name": "No undefined data types",
-                    "violations": []
-                },
-                {
-                    "clearence level": 0,
-                    "description": "All external entities that partake in data transactions must be defined",
-                    "groups": [
-                        "all"
-                    ],
-                    "is consistency": true,
-                    "mapping message": "Ensure all entities are declared in the 'external entities' property or the 'categories' property of one",
-                    "maximum violations": 0,
-                    "name": "All external entities must be described",
-                    "violations": []
-                },
-                {
-                    "clearence level": 0,
-                    "description": "The flows of data reaching data stores must all exist",
-                    "groups": [
-                        "all"
-                    ],
-                    "is consistency": true,
-                    "mapping message": "Ensure for all dataFlows there exists a declaration in the 'data flows' property",
-                    "maximum violations": 0,
-                    "name": "All data flows must be identified",
-                    "violations": [
-                        {
-                            "dataFlow": "https://devprivops.com/dfd/not_existent"
-                        }
-                    ]
-                },
-                {
-                    "clearence level": 0,
-                    "description": "All durations and periods must be properly formatted",
-                    "groups": [
-                        "all"
-                    ],
-                    "is consistency": true,
-                    "mapping message": "All time units must be 'eternal' or abide by the REGEX  \"^[0-9]+(s|sec|secs|second|seconds|m|min|mins|minute|minutes|h|hr|hrs|hour|hours|d|day|days|w|week|weeks|month|months|y|year|years)$\"",
-                    "maximum violations": 0,
-                    "name": "Wrong time formatting",
-                    "violations": []
-                },
-                {
-                    "clearence level": 0,
-                    "description": "Data flow sources and destinations must be external entities, processes or stores",
-                    "groups": [
-                        "all"
-                    ],
-                    "is consistency": true,
-                    "mapping message": "For each 'dataFlow', both the 'to' and 'from' properties shall be references to valid external entities, processes or data stores.",
-                    "maximum violations": 0,
-                    "name": "Wrong data flow endpoints",
-                    "violations": []
-                },
                 {
                     "clearence level": 0,
                     "description": "Ensure all the personal data has a valid destinatary",
@@ -362,30 +319,6 @@
                 },
                 {
                     "clearence level": 0,
-                    "description": "Ensure that no data collected in the EU is sent overseas",
-                    "groups": [
-                        "all"
-                    ],
-                    "is consistency": false,
-                    "mapping message": "Ensure the 'localtion' values are EU countries",
-                    "maximum violations": 0,
-                    "name": "User data shall not leave the EU",
-                    "violations": []
-                },
-                {
-                    "clearence level": 0,
-                    "description": "The data flows to a process shall not provide more data than it needs",
-                    "groups": [
-                        "all"
-                    ],
-                    "is consistency": false,
-                    "mapping message": "Remove the listed 'data' from the data flow's 'data' field",
-                    "maximum violations": 0,
-                    "name": "Only the strictly required data shall enter a process",
-                    "violations": []
-                },
-                {
-                    "clearence level": 0,
                     "description": "Ensure no data type is processed in an unlawful way, according to articles 5 and 6 of the GDPR",
                     "groups": [
                         "all"
@@ -457,10 +390,131 @@
                     "violations": []
                 }
             ]
+        },
+        {
+            "name": "gdpr",
+            "results": [
+                {
+                    "clearence level": 0,
+                    "description": "Ensure all data types that flow in the system are declared",
+                    "groups": [
+                        "all"
+                    ],
+                    "is consistency": true,
+                    "mapping message": "For each dataType, ensure a declaration for it exists in the 'data types' property",
+                    "maximum violations": 0,
+                    "name": "No undefined data types",
+                    "violations": [
+                        {
+                            "dataType": "https://devprivops.com/dfd/username"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/password"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/username"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/username"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/password"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/password"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/text"
+                        },
+                        {
+                            "dataType": "https://devprivops.com/dfd/datetime"
+                        }
+                    ]
+                },
+                {
+                    "clearence level": 0,
+                    "description": "All external entities that partake in data transactions must be defined",
+                    "groups": [
+                        "all"
+                    ],
+                    "is consistency": true,
+                    "mapping message": "Ensure all entities are declared in the 'external entities' property or the 'categories' property of one",
+                    "maximum violations": 0,
+                    "name": "All external entities must be described",
+                    "violations": []
+                },
+                {
+                    "clearence level": 0,
+                    "description": "The flows of data reaching data stores must all exist",
+                    "groups": [
+                        "all"
+                    ],
+                    "is consistency": true,
+                    "mapping message": "Ensure for all dataFlows there exists a declaration in the 'data flows' property",
+                    "maximum violations": 0,
+                    "name": "All data flows must be identified",
+                    "violations": [
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/non_existent"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/non_existent"
+                        }
+                    ]
+                },
+                {
+                    "clearence level": 0,
+                    "description": "All durations and periods must be properly formatted",
+                    "groups": [
+                        "all"
+                    ],
+                    "is consistency": true,
+                    "mapping message": "All time units must be 'eternal' or abide by the REGEX  \"^[0-9]+(s|sec|secs|second|seconds|m|min|mins|minute|minutes|h|hr|hrs|hour|hours|d|day|days|w|week|weeks|month|months|y|year|years)$\"",
+                    "maximum violations": 0,
+                    "name": "Wrong time formatting",
+                    "violations": []
+                },
+                {
+                    "clearence level": 0,
+                    "description": "Data flow sources and destinations must be external entities, processes or stores",
+                    "groups": [
+                        "all"
+                    ],
+                    "is consistency": true,
+                    "mapping message": "For each 'dataFlow', both the 'to' and 'from' properties shall be references to valid external entities, processes or data stores.",
+                    "maximum violations": 0,
+                    "name": "Wrong data flow endpoints",
+                    "violations": []
+                },
+                {
+                    "clearence level": 0,
+                    "description": "Ensure that no data collected in the EU is sent overseas",
+                    "groups": [
+                        "all"
+                    ],
+                    "is consistency": false,
+                    "mapping message": "Ensure the 'localtion' values are EU countries",
+                    "maximum violations": 0,
+                    "name": "User data shall not leave the EU",
+                    "violations": []
+                },
+                {
+                    "clearence level": 0,
+                    "description": "The data flows to a process shall not provide more data than it needs",
+                    "groups": [
+                        "all"
+                    ],
+                    "is consistency": false,
+                    "mapping message": "Remove the listed 'data' from the data flow's 'data' field",
+                    "maximum violations": 0,
+                    "name": "Only the strictly required data shall enter a process",
+                    "violations": []
+                }
+            ]
         }
     ],
-    "project": "devprivops",
-    "time": 1730049691,
+    "project": "src",
+    "time": 1762358309,
     "user stories": [
         {
             "clearence level": 0,

@@ -1,0 +1,5 @@
+description: Sensitive TRA data (Anomaly or RiskScore) is leaked over an unencrypted channel
+query: attack_trees/queries/data_leak.rq
+clearence level: 0
+groups: ["all"]
+children: []

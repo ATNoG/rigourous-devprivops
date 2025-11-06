@@ -2,50 +2,11 @@
     "attack trees": [
         {
             "root": {
-                "description": "R",
-                "query": "attack_trees/queries/master.rq",
-                "children": [
-                    {
-                        "description": "C1",
-                        "query": "attack_trees/queries/file1.rq",
-                        "children": [
-                            {
-                                "description": "C11",
-                                "query": "attack_trees/queries/file3.rq",
-                                "children": [],
-                                "execution status": 2,
-                                "execution result": [
-                                    {
-                                        "o": "02/03/2004"
-                                    }
-                                ],
-                                "clearence level": 0,
-                                "groups": [
-                                    "all"
-                                ]
-                            }
-                        ],
-                        "execution status": 1,
-                        "execution result": [],
-                        "clearence level": 0,
-                        "groups": [
-                            "all"
-                        ]
-                    },
-                    {
-                        "description": "C2",
-                        "query": "attack_trees/queries/file2.rq",
-                        "children": [],
-                        "execution status": 1,
-                        "execution result": [],
-                        "clearence level": 0,
-                        "groups": [
-                            "all"
-                        ]
-                    }
-                ],
-                "execution status": 0,
-                "execution result": null,
+                "description": "Model Exfiltration",
+                "query": "attack_trees/queries/model_exfiltration.rq",
+                "children": [],
+                "execution status": 1,
+                "execution result": [],
                 "clearence level": 0,
                 "groups": [
                     "all"
@@ -54,7 +15,7 @@
         }
     ],
     "branch": "",
-    "config": "chat_app",
+    "config": "hspf",
     "extra data": [
         {
             "clearence level": 0,
@@ -65,98 +26,7 @@
             ],
             "heading": "List of information to be provided for each personal data point collected",
             "location": "regulations.dpia",
-            "results": [
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dfd/send_message",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "storage_period": "eternal",
-                    "to": "https://devprivops.com/dfd/message_db"
-                },
-                {
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "storage_period": "eternal",
-                    "to": "https://devprivops.com/dfd/message_db"
-                },
-                {
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "storage_period": "eternal",
-                    "to": "https://devprivops.com/dfd/message_db"
-                },
-                {
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "storage_period": "eternal",
-                    "to": "https://devprivops.com/dfd/message_db"
-                },
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/message",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dpia/User",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "category": "https://devprivops.com/dpia/human",
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "to": "https://devprivops.com/dpia/User"
-                },
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/username",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dpia/AccountSystem",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/password",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dpia/AccountSystem",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "automated_decision_making": "false",
-                    "dt": "https://devprivops.com/dfd/AccountId",
-                    "from": "https://devprivops.com/dpia/User",
-                    "legitimate_interest_of": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "purposes": "https://devprivops.com/dpia/message_routing",
-                    "to": "https://devprivops.com/dpia/AccountSystem",
-                    "toDPIA": "https://devprivops.com/dfd/send_message"
-                },
-                {
-                    "from": "https://devprivops.com/dpia/User",
-                    "location": "Portugal",
-                    "safeguards": "encryption",
-                    "to": "https://devprivops.com/dpia/AccountSystem"
-                }
-            ]
+            "results": []
         }
     ],
     "policies": [
@@ -231,7 +101,20 @@
                     "mapping message": "Ensure all destinataries for the 'data' are valid external entities or their categories",
                     "maximum violations": 0,
                     "name": "Personal data requires valid destinataries",
-                    "violations": []
+                    "violations": [
+                        {
+                            "data": "https://devprivops.com/dfd/Model",
+                            "dest": "https://devprivops.com/dpia/Agent"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/Model",
+                            "dest": "https://devprivops.com/dpia/Aggregator"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/NetworkPacket",
+                            "dest": "https://devprivops.com/dpia/Collector"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -243,7 +126,17 @@
                     "mapping message": "Ensure all entities under 'destinataries' is an external entity of a category of external entities in the dfd",
                     "maximum violations": 0,
                     "name": "All external entities must be defined",
-                    "violations": []
+                    "violations": [
+                        {
+                            "ext_ent": "https://devprivops.com/dpia/Agent"
+                        },
+                        {
+                            "ext_ent": "https://devprivops.com/dpia/Aggregator"
+                        },
+                        {
+                            "ext_ent": "https://devprivops.com/dpia/Collector"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -267,7 +160,14 @@
                     "mapping message": "Ensure all processes' purposes and those under 'personal data processing whitelist' and 'personal data processing that requires DPIA' are defined under the 'purposes' property of a processing",
                     "maximum violations": 0,
                     "name": "All purposes of processing must be defined",
-                    "violations": []
+                    "violations": [
+                        {
+                            "purpose": "https://devprivops.com/dfd/Anonymization"
+                        },
+                        {
+                            "purpose": "https://devprivops.com/dfd/Classification"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -327,7 +227,16 @@
                     "mapping message": "All processings must be lawful, fair and transparent and also specific, explicit and legitimate",
                     "maximum violations": 0,
                     "name": "Data processing must be lawful",
-                    "violations": []
+                    "violations": [
+                        {
+                            "processing": "https://devprivops.com/dfd/Anonymization",
+                            "reason": "lawful fair transparent"
+                        },
+                        {
+                            "processing": "https://devprivops.com/dfd/Classification",
+                            "reason": "lawful fair transparent"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -351,7 +260,48 @@
                     "mapping message": "No process can to automated decisions, score users or have a legal impact on them, do large scale processing, do systematic monitoring, be blacklisted in the DPIA, or not be whitelisted",
                     "maximum violations": 0,
                     "name": "DPIA",
-                    "violations": []
+                    "violations": [
+                        {
+                            "proc": "https://devprivops.com/dfd/Anonymization",
+                            "risk": "https://devprivops.com/dpia/Unauthorized_access_to_raw_network_packets",
+                            "violation": "35 3 a"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/Classification",
+                            "risk": "https://devprivops.com/dpia/Model_Exfiltration",
+                            "violation": "35 3 a"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/Anonymization",
+                            "risk": "https://devprivops.com/dpia/Unauthorized_access_to_raw_network_packets",
+                            "violation": "35 3 b"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/Classification",
+                            "risk": "https://devprivops.com/dpia/Model_Exfiltration",
+                            "violation": "35 3 b"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/Anonymization",
+                            "risk": "https://devprivops.com/dpia/Unauthorized_access_to_raw_network_packets",
+                            "violation": "35 3 c"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/Classification",
+                            "risk": "https://devprivops.com/dpia/Model_Exfiltration",
+                            "violation": "35 3 c"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/Anonymization",
+                            "risk": "https://devprivops.com/dpia/Unauthorized_access_to_raw_network_packets",
+                            "violation": "35 4 in a blacklist"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/Classification",
+                            "risk": "https://devprivops.com/dpia/Model_Exfiltration",
+                            "violation": "35 4 in a blacklist"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -363,7 +313,14 @@
                     "mapping message": "No processing shall require new technologies",
                     "maximum violations": 0,
                     "name": "New Technologies Require DPIA",
-                    "violations": []
+                    "violations": [
+                        {
+                            "proc": "https://devprivops.com/dfd/Anonymization"
+                        },
+                        {
+                            "proc": "https://devprivops.com/dfd/Classification"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -375,7 +332,15 @@
                     "mapping message": "No process can have a risk factor higher than 8",
                     "maximum violations": 0,
                     "name": "Processings With High Risk",
-                    "violations": []
+                    "violations": [
+                        {
+                            "impact": "5",
+                            "likelihood": "2",
+                            "proc": "https://devprivops.com/dfd/Anonymization",
+                            "risk": "https://devprivops.com/dpia/Unauthorized_access_to_raw_network_packets",
+                            "riskFactor": "10"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -406,28 +371,7 @@
                     "name": "No undefined data types",
                     "violations": [
                         {
-                            "dataType": "https://devprivops.com/dfd/username"
-                        },
-                        {
-                            "dataType": "https://devprivops.com/dfd/password"
-                        },
-                        {
-                            "dataType": "https://devprivops.com/dfd/username"
-                        },
-                        {
-                            "dataType": "https://devprivops.com/dfd/username"
-                        },
-                        {
-                            "dataType": "https://devprivops.com/dfd/password"
-                        },
-                        {
-                            "dataType": "https://devprivops.com/dfd/password"
-                        },
-                        {
-                            "dataType": "https://devprivops.com/dfd/text"
-                        },
-                        {
-                            "dataType": "https://devprivops.com/dfd/datetime"
+                            "dataType": "https://devprivops.com/dfd/Classification"
                         }
                     ]
                 },
@@ -441,7 +385,14 @@
                     "mapping message": "Ensure all entities are declared in the 'external entities' property or the 'categories' property of one",
                     "maximum violations": 0,
                     "name": "All external entities must be described",
-                    "violations": []
+                    "violations": [
+                        {
+                            "entity": "https://devprivops.com/dpia/MicroService"
+                        },
+                        {
+                            "entity": "https://devprivops.com/dpia/MicroService"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -453,7 +404,44 @@
                     "mapping message": "Ensure for all dataFlows there exists a declaration in the 'data flows' property",
                     "maximum violations": 0,
                     "name": "All data flows must be identified",
-                    "violations": []
+                    "violations": [
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/RAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/RAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/CAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/CAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/UAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/UAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/UAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/UAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/DAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/DAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/DAnonNetworkPacket"
+                        },
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/DAnonNetworkPacket"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -477,7 +465,13 @@
                     "mapping message": "For each 'dataFlow', both the 'to' and 'from' properties shall be references to valid external entities, processes or data stores.",
                     "maximum violations": 0,
                     "name": "Wrong data flow endpoints",
-                    "violations": []
+                    "violations": [
+                        {
+                            "dataFlow": "https://devprivops.com/dfd/ClassifyLocal",
+                            "matchedPredicate": "to",
+                            "serviceId": "https://devprivops.com/dfd/TrafficClassification"
+                        }
+                    ]
                 },
                 {
                     "clearence level": 0,
@@ -501,13 +495,44 @@
                     "mapping message": "Remove the listed 'data' from the data flow's 'data' field",
                     "maximum violations": 0,
                     "name": "Only the strictly required data shall enter a process",
-                    "violations": []
+                    "violations": [
+                        {
+                            "data": "https://devprivops.com/dfd/NetworkPacket",
+                            "dataFlow": "https://devprivops.com/dfd/Classify",
+                            "dest": "https://devprivops.com/dfd/Classification"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/Classification",
+                            "dataFlow": "https://devprivops.com/dfd/SendClassificationLocal",
+                            "dest": "https://devprivops.com/dfd/Aggregator"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/TrafficClassification",
+                            "dataFlow": "https://devprivops.com/dfd/SendClassification",
+                            "dest": "https://devprivops.com/dfd/PolicyEnforcer"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/NetworkPacket",
+                            "dataFlow": "https://devprivops.com/dfd/ClassifyLocal",
+                            "dest": "https://devprivops.com/dfd/TrafficClassification"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/Model",
+                            "dataFlow": "https://devprivops.com/dfd/DeployModel",
+                            "dest": "https://devprivops.com/dfd/Agent"
+                        },
+                        {
+                            "data": "https://devprivops.com/dfd/AnonNetworkPacket",
+                            "dataFlow": "https://devprivops.com/dfd/TrafficToAggregator",
+                            "dest": "https://devprivops.com/dfd/Aggregator"
+                        }
+                    ]
                 }
             ]
         }
     ],
     "project": "src",
-    "time": 1762358309,
+    "time": 1762361614,
     "user stories": [
         {
             "clearence level": 0,
@@ -517,16 +542,12 @@
             "is misuse case": false,
             "requirements": [
                 {
-                    "description": "Some more details on the requirement",
-                    "results": [
-                        {
-                            "o": "02/03/2004"
-                        }
-                    ],
-                    "title": "Requirement 1"
+                    "description": "The system must be resilient against DoS Hulk, DoS. DoS Slowloris, DoS Slowhttptest, DDoS, Nmap, FTP-Patator, SSH-Patator, Bot, Brute Force, Web Attack, and SQL Injections attacks",
+                    "results": [],
+                    "title": "The system must have safeguards against common network attacks"
                 }
             ],
-            "use case": "As a persona I want to do stuff so that my life is better"
+            "use case": "As a User I want to be able to detect well known network attacks so that my microservices are secure against them"
         }
     ]
 }

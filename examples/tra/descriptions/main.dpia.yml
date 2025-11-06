@@ -1,0 +1,117 @@
+# yaml-language-server: $schema=../../global/schemas/dpia-schema.json
+
+last update: 02/03/2004
+responsible:
+  - :John Doe
+DPO:
+  - name: John Smith
+    contact: john.smith@dpocorp.com
+
+personal data:
+  - id: dfd:Anomaly
+    kind: :personal # contains potentially system info
+    required by law: []
+    necessary to enter contract: []
+    destinataries: 
+      - :SystemAdministrator # the consumers of the risk score
+    retention period: 30d
+    abides by code of conduct: false
+    purposes:
+      - :threat assessment
+      - :risk calculation
+    transfers to third parties: []
+  - id: dfd:RiskScore
+    kind: :personal # the output score is sensitive and confidential
+    required by law: []
+    necessary to enter contract: []
+    destinataries: 
+      - :SystemAdministrator
+    retention period: 30d
+    abides by code of conduct: false
+    purposes:
+      - :threat assessment
+      - :risk calculation
+    transfers to third parties: []
+  - id: dfd:TrustPosture
+    kind: :personal # confidential data about system trust
+    required by law: []
+    necessary to enter contract: []
+    destinataries: 
+      - :SystemAdministrator
+    retention period: 24h
+    abides by code of conduct: false
+    purposes:
+      - :threat assessment
+    transfers to third parties: []
+  - id: dfd:CVEData
+    kind: :public # this is public data from NVD
+    required by law: []
+    necessary to enter contract: []
+    destinataries: 
+      - :SystemAdministrator
+    retention period: 24h
+    abides by code of conduct: false
+    purposes:
+      - :threat assessment
+    transfers to third parties: []
+
+risks:
+  - id: Unauthorized access to TRA data
+    impact: 4 # high impact, as it could reveal vulnerabilities
+    likelyhood: 2 # low
+    accepted mitigations:
+      - HTTPS encryption on all data flows
+      - ZTM-based access control
+  - id: Incorrect risk assessment
+    impact: 5 # severe impact
+    likelyhood: 1 # very low, as it uses multiple sources (NVD, ZTM)
+    accepted mitigations:
+      - Enrichment with NIST NVD
+      - Enrichment with ZTM Trust Posture data
+
+personal data processing whitelist:
+  - :threat assessment
+  - :risk calculation
+
+personal data processing that requires DPIA: []
+
+processings:
+  - id: dfd:AssessThreatRisk
+    requires new technologies: true
+    risk to rights and freedoms of:
+      - :SystemAdministrator
+    required for contract: []
+    legally mandated: false
+    vital interest: []
+    public interest: true
+    is official authority: false
+    legitimate interest:
+      - :SystemAdministrator
+    professional secrecy: false
+    scores users: false # it scores threats, not users
+    automated decisions: true
+    legal impact for the user: false
+    systematic monitoring: true
+    large scale processing: true
+    lawful: true
+    fair: true
+    transparent: true
+    specific: true
+    explicit: true
+    legitimate: true
+    purposes:
+      - id: :threat assessment
+        adequate: true 
+        relevant: true 
+        limited: true
+      - id: :risk calculation
+        adequate: true 
+        relevant: true 
+        limited: true
+    risks:
+      - :Unauthorized access to TRA data
+      - :Incorrect risk assessment
+    supervisory authority veredict:
+      contact:
+        - :Supervisor
+      allowed: true
